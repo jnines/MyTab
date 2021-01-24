@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+
+    "name": "MyTab",
+    "description": "Private homepage and new tab.",
+    "author": "_nines",
+    "version": "1.0.9",
+
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+
+    "chrome_settings_overrides": {
+        "homepage": "index.html"
+    }
+}
