@@ -76,18 +76,29 @@ function requestGitRepos(gitRepos) {
         let fgName = gitRepos.lastIndexOf('/');
         let rsName = gitRepos.substring(fgName + 1);
         let rName = rsName.toUpperCase();
+        let uDate = new Date();
+        let cDate = uDate.toLocaleString();
+        let s1Date = cDate.split(',');
         let fDate = new Date(data.commit.commit.committer.date);
         let lDate = fDate.toLocaleString();
+        let s2Date = lDate.split(',');
         let cMessage = data.commit.commit.message;
         let fMessage = cMessage.split('\n')[0];
         // HTML stuff
         let ul = document.getElementById('gRepos');
         let li = document.createElement('li');
+        let rTitle = null;
+        if (s1Date[0] === s2Date[0]) {
+            rTitle = "rTitleNew";
+        }
+        else {
+            rTitle = "rTitle"
+        }
         li.innerHTML = `
-                            <p class="rTitle"><a href="https://github.com/${gitRepos}">${rName}</a></p>
-                            <p>${lDate}</p>
-                            <p>${fMessage}</p>
-                    `;
+        <p class=${rTitle}><a href="https://github.com/${gitRepos}">${rName}</a></p>
+        <p>${lDate}</p>
+        <p>${fMessage}</p>
+    `;
         ul.appendChild(li);
     };
     // Request

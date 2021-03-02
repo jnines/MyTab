@@ -18,7 +18,6 @@ header {
 
 a {
     text-decoration: none;
-    color: #e3bf81;
 }
 
 p {
@@ -90,13 +89,27 @@ p {
     border-top-style: hidden;
     border-right-style: hidden;
     background: linear-gradient(to top right, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: inset 1px 1px 5px #000000;
 }
 
 .rTitle {
     font-size: 20px;
     margin: 15px 0 0 0;
+    color: #e3bf81;
+}
+
+.rTitle a {
+    color: #e3bf81;
+}
+
+.rTitleNew {
+    font-size: 20px;
+    margin: 15px 0 0 0;
+}
+
+.rTitleNew a {
+    color: #e34607;
 }
 
 .wBox {
