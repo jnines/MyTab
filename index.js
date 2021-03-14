@@ -11,7 +11,7 @@ const myBookmarks = [
     ['Unifi', 'https://ash.lan:9007/manage/account/login?redirect=%2Fmanage', 'fas fa-wifi'],
     ['Switch', 'http://10.10.10.2/cs268aae7c/config/log_off_page.htm', 'fas fa-network-wired'],
     ['Bazarr', 'http://ash.lan:9010/movies', 'far fa-closed-captioning'],
-    ['Portainer', 'http://ash.lan:9004/#/containers', 'fab fa-docker'],
+    ['BitWarden', 'https://vault.bitwarden.com/#/vault', 'fas fa-unlock-alt'],
     ['Pihole Ash', 'http://ash.lan/admin/', 'fab fa-raspberry-pi'],
     ['Archbox', 'https://127.0.0.1:8080/', 'fas fa-sync-alt'],
     ['Ash', 'http://10.10.10.108:8384/', 'fas fa-sync-alt'],
@@ -27,8 +27,7 @@ const gitRepos = [
     'Frogging-Family/linux-tkg',
     'Frogging-Family/nvidia-all',
     'Sapd/HeadsetControl',
-    'linuxserver/docker-unifi-controller',
-    'flightlessmango/MangoHud'
+    'linuxserver/docker-unifi-controller'
 ];
 // Coordinates for weather
 const lattitude = '1.0000';
