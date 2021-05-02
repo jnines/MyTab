@@ -1,5 +1,5 @@
 // ***VARIABLES START***
-// ['Title', 'URL', 'font-awesome'],
+// ['Title', 'URL', 'img'],
 const myBookmarks = [
     ['Weather', 'https://www.wunderground.com/forecast/KDSM', 'fas fa-cloud-sun-rain'],
     ['Midland', 'https://homebanking.midlandcu.org/servlet/SLogin?template=/c/login/sloginsc.vm&amp;login=true&amp;defaultLanguage=en', 'fas fa-money-check-alt'],
@@ -13,12 +13,15 @@ const myBookmarks = [
     ['Bazarr', 'http://ash.lan:9010/movies', 'far fa-closed-captioning'],
     ['BitWarden', 'https://vault.bitwarden.com/#/vault', 'fas fa-unlock-alt'],
     ['Pihole Ash', 'http://ash.lan/admin/', 'fab fa-raspberry-pi'],
+    ['HASS', 'http://ash.lan:8123/', 'fas fa-laptop-house'],
+    ['YTDL', 'http://ash.lan:9011/youtube-dl', 'fas fa-arrow-circle-down'],
     ['Archbox', 'https://127.0.0.1:8080/', 'fas fa-sync-alt'],
-    ['Ash', 'http://10.10.10.108:8384/', 'fas fa-sync-alt'],
+    ['Ash', 'http://10.10.10.8:8384/', 'fas fa-sync-alt'],
     ['N', 'http://10.10.10.107:8384/', 'fas fa-sync-alt'],
     ['NL', 'http://10.10.10.105:8384/', 'fas fa-sync-alt'],
     ['G', 'http://10.10.10.109:8384/', 'fas fa-sync-alt'],
     ['Ring', 'https://ring.com/account', 'fab fa-watchman-monitoring']
+
 ];
 // Git token, otherwise limited to 60 hits per hour
 const gitToken = '********************************************';

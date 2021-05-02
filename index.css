@@ -33,16 +33,16 @@ p {
 .bookmarks {
     margin: 15px 20px 0 20px;
     display: grid;
-    padding: 0 10px 0px 10px;
+    padding: 0 50px 0px 10px;
     grid-gap: 1px;
-    grid-template-columns: repeat(6, 150px);
-    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: repeat(5, 130px);
+    grid-template-rows: repeat(4, 130px);
 }
 
 .bookmarks .item {
     display: block;
-    height: 140px;
-    width: 140px;
+    height: 125px;
+    width: 125px;
 }
 
 .bookmarks .item-thumb {
@@ -58,7 +58,7 @@ p {
 
 .bookmarks .item-thumb .fas, .fab, .far {
     color: rgb(144, 144, 144);
-    font-size: 70px;
+    font-size: 50px;
     margin: 22px 0 0 0;
 }
 
