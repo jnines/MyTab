@@ -58,7 +58,7 @@ function requestGitRepos(gitRepos) {
             rTitle = "rTitle"
         }
         li.innerHTML = `
-        <p class=${rTitle}><a href="https://github.com/${gitRepos}">${rName}</a></p>
+        <p class=${rTitle}><a href="https://github.com/${gitRepos[0]}">${rName}</a></p>
         <p>${lDate}</p>
         <p>${fMessage}</p>
     `;
