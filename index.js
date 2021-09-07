@@ -136,10 +136,10 @@ function getWeather(lattitude, longitude) {
     }
     weatherR.send();
 }
-if (env.monitorrURL === "") {
-    var mURL = null;
-}
-else {
-    var mURL = env.monitorrURL;
-}
+
 getWeather(env.lattitude, env.longitude);
+
+let monURL = document.getElementById('monitorr');
+if (env.monitorrURL !== undefined) {
+    monURL.innerHTML = `<iframe class="imonitorr" src=${env.monitorrURL}></iframe>`
+}
