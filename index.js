@@ -1,43 +1,4 @@
-// ***VARIABLES START***
-// ['Title', 'URL', 'img'],
-const myBookmarks = [
-    ['Weather', 'https://www.wunderground.com/forecast/KDSM', 'fas fa-cloud-sun-rain'],
-    ['Midland', 'https://homebanking.midlandcu.org/servlet/SLogin?template=/c/login/sloginsc.vm&amp;login=true&amp;defaultLanguage=en', 'fas fa-money-check-alt'],
-    ['Arch', 'https://www.archlinux.org/', 'fab fa-linux'],
-    ['AUR', 'https://aur.archlinux.org/', 'fab fa-linux'],
-    ['ProtonDB', 'https://www.protondb.com/', 'fab fa-steam'],
-    ['Pihole', 'http://pi.hole/admin/index.php', 'fab fa-raspberry-pi'],
-    ['Edgerouter X', 'http://10.10.10.1/#Dashboard', 'fas fa-network-wired'],
-    ['Unifi', 'https://ash.lan:9007/manage/account/login?redirect=%2Fmanage', 'fas fa-wifi'],
-    ['Switch', 'http://10.10.10.2/cs268aae7c/config/log_off_page.htm', 'fas fa-network-wired'],
-    ['Bazarr', 'http://ash.lan:9010/movies', 'far fa-closed-captioning'],
-    ['BitWarden', 'https://vault.bitwarden.com/#/vault', 'fas fa-unlock-alt'],
-    ['Pihole Ash', 'http://ash.lan/admin/', 'fab fa-raspberry-pi'],
-    ['HASS', 'http://ash.lan:8123/', 'fas fa-laptop-house'],
-    ['YTDL', 'http://ash.lan:9011/youtube-dl', 'fas fa-arrow-circle-down'],
-    ['Archbox', 'https://127.0.0.1:8080/', 'fas fa-sync-alt'],
-    ['Ash', 'http://10.10.10.8:8384/', 'fas fa-sync-alt'],
-    ['N', 'http://10.10.10.107:8384/', 'fas fa-sync-alt'],
-    ['NL', 'http://10.10.10.105:8384/', 'fas fa-sync-alt'],
-    ['G', 'http://10.10.10.109:8384/', 'fas fa-sync-alt'],
-    ['Ring', 'https://ring.com/account', 'fab fa-watchman-monitoring']
-
-];
-// Git token, otherwise limited to 60 hits per hour
-const gitToken = '********************************************';
-// Array of repos to check
-const gitRepos = [
-    'Frogging-Family/linux-tkg',
-    'Frogging-Family/nvidia-all',
-    'Sapd/HeadsetControl',
-    'linuxserver/docker-unifi-controller'
-];
-// Coordinates for weather
-const lattitude = '1.0000';
-const longitude = '-99.0000';
-// Openweathermap appid
-const appid = '*************************************************';
-// ***VARIABLES END***
+import * as env from './env.js'
 // Render background
 function rColor(min, max) {
     let cNum = '#';
@@ -62,21 +23,21 @@ function fillBookmarks(myBookmarks) {
     `;
     bMarks.appendChild(bookMarks);
 }
-for (let b = 0; b < myBookmarks.length; b++) {
-    fillBookmarks(myBookmarks[b]);
+for (let b = 0; b < env.myBookmarks.length; b++) {
+    fillBookmarks(env.myBookmarks[b]);
 }
 // Github repo parsing
 function requestGitRepos(gitRepos) {
     const xhr = new XMLHttpRequest();
-    const url = `https://api.github.com/repos/${gitRepos}/branches/master`;
+    const url = `https://api.github.com/repos/${gitRepos[0]}/branches/${gitRepos[1]}`;
     xhr.open('GET', url, true);
-    xhr.setRequestHeader('Authorization', 'token ' + gitToken);
+    xhr.setRequestHeader('Authorization', 'token ' + env.gitToken);
     xhr.setRequestHeader('User-Agent', 'MyTab');
     xhr.onload = function() {
         // Parse JSON
         const data = JSON.parse(this.response);
-        let fgName = gitRepos.lastIndexOf('/');
-        let rsName = gitRepos.substring(fgName + 1);
+        let fgName = gitRepos[0].lastIndexOf('/');
+        let rsName = gitRepos[0].substring(fgName + 1);
         let rName = rsName.toUpperCase();
         let uDate = new Date();
         let cDate = uDate.toLocaleString();
@@ -107,8 +68,8 @@ function requestGitRepos(gitRepos) {
     xhr.send();
 }
 
-for (let g = 0; g < gitRepos.length; g++) {
-    requestGitRepos(gitRepos[g]);
+for (let g = 0; g < env.gitRepos.length; g++) {
+    requestGitRepos(env.gitRepos[g]);
 }
 // Get weather
 const curConditions = document.getElementById('wCurrent');
@@ -116,7 +77,7 @@ const forConditions = document.getElementById('wForecast');
 
 function getWeather(lattitude, longitude) {
     const weatherR = new XMLHttpRequest();
-    const wURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lattitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=${appid}`;
+    const wURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${env.lattitude}&lon=${env.longitude}&exclude=minutely,hourly&units=imperial&appid=${env.appid}`;
     weatherR.open('GET', wURL, false);
     weatherR.onload = function() {
         const weatherF = JSON.parse(this.response);
@@ -175,4 +136,10 @@ function getWeather(lattitude, longitude) {
     }
     weatherR.send();
 }
-getWeather(lattitude, longitude);
+if (env.monitorrURL === "") {
+    var mURL = null;
+}
+else {
+    var mURL = env.monitorrURL;
+}
+getWeather(env.lattitude, env.longitude);

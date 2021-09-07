@@ -35,14 +35,14 @@ p {
     display: grid;
     padding: 0 50px 0px 10px;
     grid-gap: 1px;
-    grid-template-columns: repeat(5, 130px);
-    grid-template-rows: repeat(4, 130px);
+    grid-template-columns: repeat(6, 150px);
+    grid-template-rows: repeat(3, 150px);
 }
 
 .bookmarks .item {
     display: block;
-    height: 125px;
-    width: 125px;
+    height: 140px;
+    width: 140px;
 }
 
 .bookmarks .item-thumb {
