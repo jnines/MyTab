@@ -1,6 +1,3 @@
 I'm not sure why you'd use this, but if you do the variables are set in 'env.js.example', which needs to be renamed to 'env.js'.
 Realize this was (poorly) written by a novice in HTML/JS/CSS.
 In part so that I could get what I want, and in part to (attempt) to learn.
-If you use this to create an extension Mozilla will throw errors about innerHTML.
-Haven't gotten far enough along to fix that yet.
-Don't think it's an actual issue as it's not taking user input.  Still something I'd like to fix.

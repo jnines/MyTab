@@ -1,282 +1,324 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
 html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background: #000000;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100;
-    font-size: 11px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 10px;
 }
 
 header {
-    height: 20px;
+  height: 2rem;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 p {
-    line-height: 20px;
-    margin: 10px 0 25px 30px;
+  line-height: 2rem;
+  margin: 1rem 0 2.5rem 3rem;
+}
+
+ul {
+  margin: 2rem 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 .container {
-    float: left;
-    margin: 0 50px 0 70px;
+  float: left;
+  margin: 0 5rem 0 7rem;
 }
 
 .bookmarks {
-    margin: 15px 20px 0 20px;
-    display: grid;
-    padding: 0 50px 0px 10px;
-    grid-gap: 1px;
-    grid-template-columns: repeat(6, 150px);
-    grid-template-rows: repeat(3, 150px);
+  margin: 1.5rem 2rem 0 2rem;
+  display: grid;
+  padding: 0 5rem 3rem 1rem;
+  grid-gap: 1rem 0.1rem;
+  grid-template-columns: repeat(6, 18.5rem);
+  grid-template-rows: repeat(1fr, 18.5rem);
 }
 
 .bookmarks .item {
-    display: block;
-    height: 140px;
-    width: 140px;
+  display: block;
+  height: 18rem;
+  width: 18rem;
 }
 
 .bookmarks .item-thumb {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    border: 2px rgba(255, 255, 255, 0.9);
-    border-style: ridge;
-    border-radius: 5px;
-    opacity: 0.7;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: 0.2rem rgba(255, 255, 255, 0.9);
+  border-style: ridge;
+  border-radius: 0.5rem;
+  opacity: 0.7;
+  justify-content: center;
 }
 
-.bookmarks .item-thumb .fas, .fab, .far {
-    color: rgb(144, 144, 144);
-    font-size: 50px;
-    margin: 22px 0 0 0;
+.bookmarks .item-thumb .fas,
+.fab,
+.far {
+  color: rgb(144, 144, 144);
+  font-size: 7.5rem;
+  margin: 2.2rem 0 0 0;
 }
 
 .bookmarks .item-title {
-    display: block;
-    padding: 0;
-    margin: 10px 0 0 0;
-    font-size: 18px;
-    color: #d4d4d4;
-    text-align: center;
-    letter-spacing: 1.1px;
+  display: block;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  font-size: 2.2rem;
+  color: #d4d4d4;
+  text-align: center;
+  letter-spacing: 0.11rem;
 }
 
 .gRepos {
-    display: flex;
-    flex-flow: column;
-    padding: 0 0 0 20px;
-    margin: 0 40px 0 20px;
-    font-size: 18px;
-    list-style-type: none;
-    color: #ecebe9;
-    border-left-style: ridge;
-    border-left-width: 1px;
-    border-left-color: #aaa9ad;
-    border-bottom-style: ridge;
-    border-bottom-width: 1px;
-    border-bottom-color: #aaa9ad;
-    border-top-style: hidden;
-    border-right-style: hidden;
-    background: linear-gradient(to top right, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
-    border-radius: 5px;
-    box-shadow: inset 1px 1px 5px #000000;
+  display: flex;
+  flex-flow: column;
+  padding: 0 0 0 2rem;
+  margin: 0 7rem 0 2rem;
+  font-size: 2.2rem;
+  list-style-type: none;
+  color: #ecebe9;
+  border-left: ridge #aaa9ad 0.1rem;
+  border-bottom: ridge #aaa9ad 0.1rem;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  background: linear-gradient(to top right,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.1));
+  border-radius: 0.5rem;
+  box-shadow: inset 0.1rem 0.1rem 0.5rem #000000;
 }
 
 .rTitle {
-    font-size: 20px;
-    margin: 15px 0 0 0;
-    color: #e3bf81;
+  font-size: 2.5rem;
+  margin: 0.5rem 0 0.5rem 0;
+  color: #e3bf81;
 }
 
 .rTitle a {
-    color: #e3bf81;
+  color: #e3bf81;
 }
 
 .rTitleNew {
-    font-size: 20px;
-    margin: 15px 0 0 0;
+  font-size: 2.5rem;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .rTitleNew a {
-    color: #e34607;
+  color: #e34607;
 }
 
 .wBox {
-    display: flex;
-    padding: 30px 0 0 40px;
+  display: flex;
+  padding: 1rem 0 0 4rem;
 }
 
 .wCurrent {
-    font-size: 50px;
-    margin: 25px 20px 0 0;
+  font-size: 5rem;
+  margin: 2.5rem 2rem 0 0;
 }
 
 .wCurrent .fas {
-    font-size: 80px;
-    opacity: 0.9;
-    margin-top: 0px;
+  font-size: 8rem;
+  opacity: 0.9;
+  margin-top: 0rem;
 }
 
-.wCurrent .cTemp {
-    color: #d4d4d4;
-    font-size: 25px;
-    opacity: 0.9;
-    padding-top: 15px;
+.wCurrent .curTemp {
+  color: #d4d4d4;
+  font-size: 3.5rem;
+  opacity: 0.9;
+  padding: 1rem 0.7rem 2rem 1.3rem;
+  margin: 0 2rem;
+  background-size: cover;
 }
 
 .wForecast {
-    display: flex;
-    background: rgba(255,255,255,0.01);
-    padding: 0 0 5px 0;
+  display: flex;
+  background: rgba(129, 129, 129, 0.01);
+  padding: 0 0 1rem 0;
 }
 
-.fHead {
-    text-transform: uppercase;
-    border-bottom-style: ridge;
-    border-bottom-color: darkgrey;
-    border-bottom-width: 1px;
-    font-size: 20px;
-    font-weight: 800;
-    color: #d4d4d4;
-    padding: 10px;
+.wDays {
+  display: flex;
+  text-transform: uppercase;
+  border-bottom: ridge darkgray 0.1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #d4d4d4;
+  padding: 1rem 2.5rem;
 }
 
-.fInfo {
-    text-align: center;
-    color: #d4d4d4;
+.fContainer {
+  text-align: center;
+  color: #d4d4d4;
+  padding: 0.2rem;
+  border: ridge 0.2rem rgba(161, 161, 161, 0.1);
 }
 
-.fInfo .fas {
-    display: block;
-    margin: 0 auto;
-    font-size: 35px;
-    padding: 15px 0;
+.fContainer .fas {
+  display: block;
+  margin: 0 auto;
+  font-size: 2.2rem;
+  padding: 0.5rem 0;
 }
 
-.fInfo .hDegrees {
-    font-size: 20px;
-    line-height: 24px;
-    background-image: linear-gradient(to top left, rgba(0, 0, 255, 0.2), rgba(255, 0, 0, 0.2) 50%);
+.fContainer .hDegrees {
+  font-size: 2.5rem;
+  line-height: 2.4rem;
+  border-bottom: ridge 0.2rem rgba(161, 161, 161, 0.1);
 }
 
-.fInfo .lDegrees {
-    font-size: 20px;
-    line-height: 24px;
-    background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.2), rgba(0, 0, 255, 0.2) 50%);
+.fContainer .lDegrees {
+  font-size: 2.5rem;
+  line-height: 2.4rem;
+}
+
+.fa-exclamation {
+  color: rgb(114, 0, 0);
+}
+
+.fa-bolt {
+  background-image: linear-gradient(to bottom right,
+      rgba(255, 200, 50, 1),
+      rgba(161, 161, 161, 0.9) 65%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-sun {
-    color: rgba(255, 200, 50, 0.8);
+  background-image: linear-gradient(to bottom right,
+      rgba(177, 0, 0, 0.9) 10%,
+      rgba(255, 153, 0, 0.9));
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-moon {
-    color: rgb(185, 185, 6);
+  background-image: linear-gradient(to bottom left,
+      rgb(255, 255, 16),
+      rgba(185, 185, 6, 1) 65%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-cloud {
-    color: rgb(161, 161, 161);
+  background-image: linear-gradient(to bottom right,
+      rgba(37, 35, 32, 0.9),
+      rgb(161, 161, 161, 0.9) 65%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-wind {
+  color: rgba(161, 161, 161, 0.9);
+}
+
+.fa-cloud-sun {
+  background-image: linear-gradient(to bottom right,
+      rgba(255, 153, 0, 0.9),
+      rgba(161, 161, 161, 0.9) 65%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-cloud-moon {
+  background-image: linear-gradient(to bottom left,
+      rgba(185, 185, 6, 1),
+      rgba(161, 161, 161, 0.9) 65%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-cloud-rain {
-    color: rgba(102, 102, 234, 0.9);
-}
-
-.fa-cloud-showers-heavy {
-    color: rgb(91, 80, 156);
+  background-image: linear-gradient(to bottom,
+      rgba(161, 161, 161, 0.8) 60%,
+      rgba(74, 74, 248, 0.9));
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-snowflake {
-    color: lightskyblue;
+  background-image: linear-gradient(to bottom right,
+      rgba(82, 71, 173, 0.8),
+      rgba(127, 127, 182, 0.9) 65%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-smog {
-    color: darkgray;
+  background-image: linear-gradient(to bottom right,
+      rgba(78, 76, 76, 0.8),
+      rgba(235, 235, 235, 0.9) 65%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-slash {
+  color: rgba(86, 86, 86, 0.05);
 }
 
 .spacer {
-    clear: both;
-    height: 20px;
+  clear: both;
+  height: 2rem;
 }
 
 .monitorr {
-    overflow: hidden;
-    height: 313px;
-    opacity: 0.7;
+  overflow: hidden;
+  height: 31.3rem;
+  opacity: 0.7;
 }
 
 .imonitorr {
-    height: 100%;
-    width: 100%;
-    border: none;
+  height: 100%;
+  width: 100%;
+  border: none;
 }
 
 footer {
-    height: 5px;
+  height: 0.5rem;
 }
 
 @media only screen and (max-width: 2000px) {
-    .gRepos {
-        font-size: 16px;
-    }
-
-    .rTitle {
-        font-size: 18px;
-    }
-
-    .wBox {
-        margin: -10px 0 -10px 10px;
-    }
+  html,
+  body {
+    font-size: 8px;
+  }
 }
 
 @media only screen and (max-width: 1600px) {
-
-    .gRepos {
-        font-size: 13px;
-    }
-
-    .rTitle {
-        font-size: 15px;
-    }
+  html,
+  body {
+    font-size: 7px;
+  }
 }
 
-@media only screen and (max-width: 1400px) {
-    .gRepos {
-        visibility: hidden;
-        height: 0px;
-    }
-}
-
-@media only screen and (max-width: 1050px) {
-    .bookmarks {
-        grid-template-columns: repeat(6, 110px);
-        grid-template-rows: repeat(3, 110px);
-    }
-
-    .bookmarks .item {
-        height: 100px;
-        width: 100px;
-    }
-
-    .bookmarks .item-thumb .fas, .fab, .far {
-        font-size: 50px;
-        margin: 11px 0 0 0;
-    }
-
-    .bookmarks .item-title {
-        display: block;
-        padding: 0;
-        margin: 10px 0 0 0;
-        font-size: 14px;
-    }
+@media only screen and (max-width: 1200px) {
+  html,
+  body {
+    font-size: 6px;
+  }
 }
