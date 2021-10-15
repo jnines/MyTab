@@ -44,7 +44,7 @@ li {
   margin: 1.5rem 2rem 0 2rem;
   display: grid;
   padding: 0 5rem 3rem 1rem;
-  grid-gap: 1rem 0.1rem;
+  grid-gap: 0.8rem 0.3rem;
   grid-template-columns: repeat(6, 18.5rem);
   grid-template-rows: repeat(1fr, 18.5rem);
 }

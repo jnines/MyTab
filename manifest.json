@@ -4,7 +4,7 @@
     "name": "MyTab",
     "description": "Private homepage and new tab.",
     "author": "_nines",
-    "version": "1.0.27",
+    "version": "1.0.29",
 
     "chrome_url_overrides": {
         "newtab": "index.html"
