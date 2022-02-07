@@ -193,92 +193,132 @@ li {
 }
 
 .fa-bolt {
+  background: -webkit-linear-gradient(to bottom right,
+      rgba(255, 200, 50, 1),
+      rgba(161, 161, 161, 0.9) 65%);
   background-image: linear-gradient(to bottom right,
       rgba(255, 200, 50, 1),
       rgba(161, 161, 161, 0.9) 65%);
   background-size: 100%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-sun {
+  background: -webkit-linear-gradient(to bottom right,
+      rgba(177, 0, 0, 0.9) 10%,
+      rgba(255, 153, 0, 0.9));
   background-image: linear-gradient(to bottom right,
       rgba(177, 0, 0, 0.9) 10%,
       rgba(255, 153, 0, 0.9));
   background-size: 100%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-moon {
+  background: -webkit-linear-gradient(to bottom left,
+      rgb(255, 255, 16),
+      rgba(185, 185, 6, 1) 65%);
   background-image: linear-gradient(to bottom left,
       rgb(255, 255, 16),
       rgba(185, 185, 6, 1) 65%);
   background-size: 100%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-cloud {
+  background: -webkit-linear-gradient(to bottom right,
+      rgba(37, 35, 32, 0.9),
+      rgb(161, 161, 161, 0.9) 65%);
   background-image: linear-gradient(to bottom right,
       rgba(37, 35, 32, 0.9),
       rgb(161, 161, 161, 0.9) 65%);
   background-size: 100%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-wind {
   color: rgba(161, 161, 161, 0.9);
+  background-clip:text;
+  -webkit-background-clip: text;
 }
 
 .fa-cloud-sun {
+  background: -webkit-linear-gradient(to bottom right,
+      rgba(255, 153, 0, 0.9),
+      rgba(161, 161, 161, 0.9) 65%);
   background-image: linear-gradient(to bottom right,
       rgba(255, 153, 0, 0.9),
       rgba(161, 161, 161, 0.9) 65%);
   background-size: 100%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-cloud-moon {
+  background: -webkit-linear-gradient(to bottom left,
+      rgba(185, 185, 6, 1),
+      rgba(161, 161, 161, 0.9) 65%);
   background-image: linear-gradient(to bottom left,
       rgba(185, 185, 6, 1),
       rgba(161, 161, 161, 0.9) 65%);
   background-size: 100%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-cloud-rain {
+  background: -webkit-linear-gradient(to bottom,
+      rgba(161, 161, 161, 0.8) 60%,
+      rgba(74, 74, 248, 0.9));
   background-image: linear-gradient(to bottom,
       rgba(161, 161, 161, 0.8) 60%,
       rgba(74, 74, 248, 0.9));
   background-size: 100%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-snowflake {
+  background: -webkit-linear-gradient(to bottom right,
+      rgba(82, 71, 173, 0.8),
+      rgba(127, 127, 182, 0.9) 65%);
   background-image: linear-gradient(to bottom right,
       rgba(82, 71, 173, 0.8),
       rgba(127, 127, 182, 0.9) 65%);
   background-size: 100%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-smog {
+  background: -webkit-linear-gradient(to bottom right,
+      rgba(78, 76, 76, 0.8),
+      rgba(235, 235, 235, 0.9) 65%);
   background-image: linear-gradient(to bottom right,
       rgba(78, 76, 76, 0.8),
       rgba(235, 235, 235, 0.9) 65%);
   background-size: 100%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-slash {
   color: rgba(86, 86, 86, 0.05);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .spacer {
