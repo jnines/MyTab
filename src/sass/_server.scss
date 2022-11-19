@@ -1,0 +1,93 @@
+.server {
+  grid-column: span 2;
+  grid-row-end: -1;
+  opacity: 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  align-items: center;
+  overflow: hidden scroll;
+
+  @media only screen and (max-width: 62.5em) {
+    grid-column: 1;
+    grid-row-end: unset;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hslaf($color-black, 0.6);
+    border-radius: $border-radius-sm;
+    box-shadow: 5px 5px 5px hslaf($color-black, 0.9);
+    padding: 0.5rem;
+    width: 20rem;
+    height: 25rem;
+    transition: all 0.2s ease-in;
+
+    &:hover,
+    &:focus {
+      border: 2px solid hslaf($color-grey-40, 0.6);
+      text-shadow: 0 0 2px hslaf($color-green, 0.5);
+      font-weight: 700;
+      transform: scale(1.1);
+      transition: all 0.2s ease-in;
+    }
+
+    & > .fas,
+    & > .fab,
+    & > .far {
+      font-size: 8rem;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  &__title {
+    height: 4rem;
+    margin: 1rem;
+    font-size: 2.5rem;
+    color: hslaf($color-grey-80, 1);
+  }
+
+  &__status {
+    margin: 0 3rem;
+    padding: 0.5rem 0;
+    border-radius: $border-radius-hg;
+    color: hslaf($color-white, 1);
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px hslaf($color-black, 0.9);
+
+    &--on {
+      background-color: hslaf($color-green, 0.6);
+      box-shadow: 0 0.2rem 1rem hslaf($color-green, 0.7);
+
+      &:hover,
+      &:focus {
+        text-shadow: 0 0 2rem hslaf($color-green, 0.5);
+      }
+    }
+
+    &--off {
+      background-color: hslaf($color-red, 0.8);
+      box-shadow: 0 0.2rem 1rem hslaf($color-red, 0.5);
+
+      &:hover,
+      &:focus {
+        text-shadow: 0 0 2rem hslaf($color-red, 0.5);
+      }
+    }
+  }
+}

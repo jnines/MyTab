@@ -1,0 +1,183 @@
+.weather {
+  position: relative;
+  grid-column-start: 1;
+  grid-row: 2 / 3;
+  align-items: center;
+  width: fit-content;
+  padding-left: 8rem;
+  font-size: 3rem;
+  color: hslaf($color-grey-40, 1);
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+
+  @media only screen and (max-width: 62.5em) {
+    grid-row: unset;
+    padding-left: 0;
+    justify-self: center;
+  }
+
+  &__link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &-cur {
+    position: relative;
+    margin: 2.5rem 2rem 0 0;
+    z-index: 101;
+    flex-direction: column;
+
+    &:hover .tooltip--weather {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    & > .fas,
+    & > .fab,
+    & > .far {
+      font-size: 8rem;
+      opacity: 0.9;
+      margin-top: 0;
+    }
+
+    &__temp {
+      color: hslaf($color-grey-80, 1);
+      font-size: 3.5rem;
+      opacity: 0.9;
+      padding: 1rem 0.7rem 2rem 1.3rem;
+      margin: 0 2rem;
+      background-size: cover;
+    }
+  }
+
+  &-fc {
+    background: hslaf($color-black, 0.01);
+    padding: 0 0 1rem;
+    font-size: 2.8rem;
+    line-height: 4rem;
+
+    &__days {
+      position: relative;
+      display: flex;
+      border-bottom: ridge hslaf($color-grey-60, 1) 0.1rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: hslaf($color-grey-80, 1);
+      padding: 1rem 2.5rem;
+      z-index: 101;
+
+      &:hover .tooltip--weather {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    &__column {
+      position: relative;
+      text-align: center;
+      color: hslaf($color-grey-80, 1);
+      padding: 0.2rem;
+      border: ridge 0.2rem hslaf($color-grey-60, 0.2);
+
+      @media only screen and (max-width: 62.5em) {
+        z-index: 0;
+      }
+    }
+
+    &__highs {
+      border-bottom: ridge 0.2rem hslaf($color-grey-60, 0.2);
+    }
+  }
+
+  & .fa {
+    &-exclamation {
+      color: hslaf($color-black, 0.01);
+    }
+
+    &-bolt {
+      @include weather-fa-grad(
+        tbr,
+        hslaf($color-yellow, 1),
+        hslaf($color-grey-60, 0.9) 65%
+      );
+    }
+
+    &-sun {
+      @include weather-fa-grad(
+        tbr,
+        hslaf($color-red, 0.9) 10%,
+        hslaf($color-orange, 0.9)
+      );
+    }
+
+    &-moon {
+      @include weather-fa-grad(
+        tbl,
+        hslaf($color-yellow, 1),
+        hslaf($color-yellow, 0.5) 65%
+      );
+    }
+
+    &-cloud {
+      @include weather-fa-grad(
+        tbr,
+        hslaf($color-grey-20, 0.9),
+        hslaf($color-grey-60, 0.9) 65%
+      );
+    }
+
+    &-wind {
+      color: hslaf($color-grey-60, 0.9);
+    }
+
+    &-cloud-sun {
+      @include weather-fa-grad(
+        tbr,
+        hslaf($color-orange, 0.9),
+        hslaf($color-grey-60, 0.9) 65%
+      );
+    }
+
+    &-cloud-moon {
+      @include weather-fa-grad(
+        tbl,
+        hslaf($color-yellow, 1),
+        hslaf($color-grey-60, 0.9) 65%
+      );
+    }
+
+    &-cloud-rain {
+      @include weather-fa-grad(
+        tb,
+        hslaf($color-grey-60, 0.8) 60%,
+        hslaf($color-blue, 0.9)
+      );
+    }
+
+    &-snowflake {
+      @include weather-fa-grad(
+        tbr,
+        hslaf($color-blue, 0.7),
+        hslaf($color-blue, 0.5) 65%
+      );
+    }
+
+    &-smog {
+      @include weather-fa-grad(
+        tbr,
+        hslaf($color-grey-40, 0.8),
+        hslaf($color-white, 0.9) 65%
+      );
+    }
+
+    &-slash {
+      font-size: 1px;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

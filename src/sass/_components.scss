@@ -1,0 +1,199 @@
+.tooltip {
+  position: absolute;
+  text-align: start;
+  padding: 0 2rem;
+  border-radius: $border-radius-lg;
+  border: 2px inset hslaf($color-green, 0.1);
+  outline: 5px groove hslaf($color-white, 0.1);
+  color: hslaf($color-white, 0.9);
+  background-color: hslaf($color-grey-20, 1);
+  z-index: 1000;
+  transition: visibility 0s, opacity 0.3s ease-in;
+
+  @media only screen and (max-width: 62.5em) {
+    display: none;
+  }
+
+  &--weather {
+    bottom: 115%;
+    left: 25%;
+    padding: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 2.2rem;
+    white-space: pre-line;
+    min-width: 20vw;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 101%;
+      left: 0%;
+      border-top: 1.5rem solid hslaf($color-white, 0.3);
+      border-right: 1.5rem solid transparent;
+      border-bottom: 1.5rem solid transparent;
+      border-left: 1.5rem solid transparent;
+    }
+  }
+
+  &--git {
+    bottom: 0%;
+    right: 101%;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.8rem;
+    white-space: pre-line;
+    min-width: 40rem;
+  }
+
+  &--options {
+    top: 15%;
+    left: 10%;
+    background-color: hslaf($color-grey-20, 0.8);
+    visibility: hidden;
+    opacity: 0;
+    padding: 1rem 2rem;
+    font-size: 2.2rem;
+    white-space: pre-line;
+  }
+
+  &--short {
+    min-width: unset;
+    max-width: fit-content;
+    white-space: pre;
+  }
+}
+
+.toggle {
+  position: relative;
+  background: hslaf($color-grey-80, 0.5);
+  border-radius: 3rem;
+  width: 24rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $color-white;
+  padding-right: 12rem;
+  margin: 0 2rem 1rem 1rem;
+  overflow: hidden;
+
+  @media only screen and (max-width: 62.5em) {
+    border-radius: 5rem;
+    width: 30rem;
+  }
+
+  &:focus-within {
+    outline: 0.5rem ridge hslaf($color-green, 0.9);
+  }
+
+  &__unchecked {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    pointer-events: none;
+    z-index: 1;
+
+    @media only screen and (max-width: 62.5em) {
+      width: 15rem;
+    }
+  }
+
+  &__checked {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    pointer-events: none;
+    z-index: 1;
+
+    @media only screen and (max-width: 62.5em) {
+      width: 15rem;
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+
+    &:checked + .toggle__label::before {
+      content: '';
+      transform: translateX(12rem);
+
+      @media only screen and (max-width: 62.5em) {
+        transform: translateX(15rem);
+      }
+    }
+
+    & + .toggle__label {
+      position: relative;
+      display: block;
+      padding: 3rem 0;
+      user-select: none;
+      pointer-events: none;
+
+      @media only screen and (max-width: 62.5em) {
+        padding: 4rem 0;
+      }
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: hslaf($color-green, 0.5);
+        border-radius: 3rem;
+        height: 100%;
+        width: 100%;
+        content: '';
+        transition: transform 0.5s;
+
+        @media only screen and (max-width: 62.5em) {
+          border-radius: 5rem;
+        }
+      }
+    }
+  }
+
+  &__header {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+}
+
+.btn {
+  @include weather-fa;
+
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+
+  &--absolute {
+    position: absolute;
+  }
+
+  &--drag {
+    cursor: move;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}

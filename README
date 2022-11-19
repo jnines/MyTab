@@ -1,3 +1,0 @@
-I'm not sure why you'd use this, but if you do the variables are set in 'env.js.example', which needs to be renamed to 'env.js'.
-Realize this was (poorly) written by a novice in HTML/JS/CSS.
-In part so that I could get what I want, and in part to (attempt) to learn.

@@ -1,0 +1,286 @@
+.options {
+  &__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+    margin: 0.5rem;
+
+    @media only screen and (max-width: 62.5em) {
+      grid-column: 1;
+      grid-row: unset;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-weight: 700;
+    place-self: center;
+    text-align: center;
+    font-size: 5rem;
+
+    &--sm {
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    background-color: hslaf($color-grey-20, 0.95);
+    border-bottom: 3px solid hslaf($color-white, 0.1);
+    display: flex;
+    font-weight: 700;
+    padding: 1rem 0;
+    font-size: 2rem;
+    align-items: center;
+    white-space: nowrap;
+
+    &--git {
+      justify-content: space-between;
+    }
+  }
+
+  &__close {
+    @include weather-fa;
+
+    top: 1rem;
+    right: 5rem;
+    font-size: 5rem;
+
+    @include weather-fa-grad(
+      tbr,
+      hslaf($color-red, 0.7) 60%,
+      hslaf($color-red, 0.1)
+    );
+
+    @media only screen and (max-width: 62.5em) {
+      top: 1rem;
+    }
+  }
+
+  &__group {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 1rem;
+    right: 4rem;
+    padding: 0 1rem;
+    border-radius: $border-radius-lg;
+    border: 1px ridge hslaf($color-green, 0.1);
+    background-color: hslaf($color-grey-40, 0.1);
+
+    @media only screen and (max-width: 62.5em) {
+      background-color: unset;
+      border: none;
+      bottom: unset;
+      right: unset;
+      top: 1rem;
+      left: 4rem;
+    }
+  }
+
+  &__save {
+    @include weather-fa;
+
+    font-size: 5rem;
+    margin-left: 5rem;
+
+    @include weather-fa-grad(
+      tbr,
+      hslaf($color-green, 0.7) 50%,
+      hslaf($color-green, 0.3)
+    );
+
+    @media only screen and (max-width: 62.5em) {
+      margin-left: 0;
+      margin-right: 5rem;
+      order: -1;
+    }
+  }
+
+  &__export {
+    @include weather-fa;
+
+    font-size: 3rem;
+
+    @include weather-fa-grad(
+      tbl,
+      hslaf($color-green, 0.7) 5%,
+      hslaf($color-green, 0.4)
+    );
+  }
+
+  &__import {
+    @include weather-fa;
+
+    padding: 0 2rem;
+    font-size: 3rem;
+
+    @include weather-fa-grad(
+      tbl,
+      hslaf($color-green, 0.7) 5%,
+      hslaf($color-green, 0.4)
+    );
+  }
+
+  &__forms {
+    grid-column: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    border: 2px solid hslaf($color-grey-80, 0.4);
+    border-radius: $border-radius-lg;
+    overflow-y: scroll;
+
+    @media only screen and (max-width: 62.5em) {
+      height: 40vh;
+    }
+
+    &--row {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__grab {
+    font-size: 3rem;
+    align-self: center;
+  }
+
+  &__delete {
+    @include weather-fa;
+
+    align-self: center;
+    font-size: 3rem;
+
+    @include weather-fa-grad(
+      tbr,
+      hslaf($color-red, 0.9) 10%,
+      hslaf($color-red, 0.5)
+    );
+  }
+
+  &__plus {
+    font-size: 2rem;
+    padding-left: 2rem;
+
+    &--bmstack {
+      position: relative;
+      padding-left: 3px;
+      opacity: 0.6;
+    }
+
+    &--gitstack {
+      position: relative;
+      opacity: 0.6;
+    }
+
+    &--plus {
+      bottom: 0;
+      right: -1rem;
+
+      @include weather-fa-grad(
+        tbr,
+        hslaf($color-green, 1) 60%,
+        hslaf($color-green, 0.6)
+      );
+    }
+
+    &--git {
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &__labels {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    font-weight: 700;
+    margin: 0.5rem 1rem;
+    font-size: 3rem;
+    white-space: nowrap;
+  }
+
+  &__inputs {
+    color: hslaf($color-white, 0.9);
+    background-color: hslaf($color-grey-40, 0.9);
+    padding-left: 1rem;
+    margin-left: 1rem;
+    font-size: 2rem;
+    outline: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0 $border-radius-sm $border-radius-sm;
+    height: 100%;
+    width: 100%;
+
+    &:invalid {
+      background-color: hslaf($color-red, 0.1);
+    }
+
+    &:disabled {
+      background-color: $color-grey-20;
+    }
+
+    &--weather {
+      height: 5rem;
+      place-items: center;
+    }
+
+    &--gitkey {
+      height: 3.5rem;
+      width: 30rem;
+      margin-right: 1rem;
+
+      @media only screen and (max-width: 62.5em) {
+        height: 5rem;
+      }
+    }
+
+    &--servermonrefresh {
+      width: 8rem;
+
+      @media only screen and (max-width: 87.5em) {
+        width: 9rem;
+      }
+
+      @media only screen and (max-width: 75em) {
+        width: 10rem;
+      }
+
+      @media only screen and (max-width: 62.5em) {
+        width: 13rem;
+      }
+    }
+
+    &:focus,
+    &:active {
+      border-bottom: 2px solid $color-green;
+    }
+  }
+
+  &__info {
+    @include weather-fa;
+
+    font-size: 0.5rem;
+    align-self: flex-start;
+
+    &:hover + .tooltip--options {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.fa-stack-1x {
+  left: 3rem;
+  bottom: -1.2rem;
+}

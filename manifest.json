@@ -1,16 +1,25 @@
 {
-    "manifest_version": 2,
-
-    "name": "MyTab",
-    "description": "Private homepage and new tab.",
-    "author": "_nines",
-    "version": "1.0.35",
-
-    "chrome_url_overrides": {
-        "newtab": "index.html"
-    },
-
-    "chrome_settings_overrides": {
-        "homepage": "index.html"
+  "manifest_version": 2,
+  "name": "MyTab",
+  "description": "Private homepage and new tab.",
+  "author": "Jason Mullenberg",
+  "homepage_url": "https://github.com/jnines/MyTab",
+  "version": "1.0.3",
+  "permissions": ["storage", "geolocation"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mytab@jason-mullenberg.com"
     }
+  },
+  "icons": {
+    "16": "resources/icon16.png",
+    "48": "resources/icon48.png",
+    "128": "resources/icon128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "chrome_settings_overrides": {
+    "homepage": "index.html"
+  }
 }

@@ -1,25 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Home</title>
-  </head>
-  <body>
-    <header></header>
-    <div class="container" id="container">
-      <div class="bookmarks" id="bookmarks"></div>
-      <div class="wBox">
-        <div class="wCurrent" id="wCurrent"></div>
-        <div class="wForecast" id="wForecast"></div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- https://realfavicongenerator.net/donate -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/resources/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon-16x16.png">
+  <link rel="manifest" href="/resources/site.webmanifest">
+  <link rel="mask-icon" href="/resources/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/resources/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/resources/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="app/app.css">
+  <script src="app/app.js" defer></script>
+  <title>Home</title>
+</head>
+
+<body>
+  <main class="container container--multi">
+    <div class="options-btn"><i class="fas fa-gear"></i></div>
+    <div class="bookmarks grid"></div>
+    <div class="weather flex"></div>
+    <div class="git grid"></div>
+    <div class="server flex"></div>
+
+    <div class="modal hidden" role="dialog" aria-modal="true">
+
+      <h1 class="options__title">Options</h1>
+
+      <section class="options__forms" id="bookmarks">
+        <h2 class="options__header">Bookmarks <i class="fas fa-circle-info options__info"></i>
+          <span class="tooltip tooltip--options">
+            Name: Name/title you want shown
+            Url: Full Url to bookmarks
+            Icon: FontAwesome Icon code
+            Icon can use any value, ie;
+            fab fa-google,
+            fa-brands fa-google, or
+            &lt;i class="fa-brands fa-google"&gt;&lt;/i&gt; </span><span
+            class="btn options__plus options__plus--bookmarks fa-stack fa-2x" title="Add Bookmark">
+            <i class="fas fa-circle-plus fa-stack-1x options__plus--plus"></i>
+            <i class="fas fa-bookmark fa-stack-2x options__plus--bmstack"></i>
+          </span>
+        </h2>
+      </section>
+
+      <section class="options__forms" id="git">
+        <h2 class="options__header options__header--git">Git Repos <i class="fas fa-circle-info options__info"></i><span
+            class="tooltip tooltip--options">
+            Repo: Username/Repository name
+            Branch: Usually master or main
+            Api Key: Only necessary with large number of repos
+          </span>
+          <span class="btn options__plus options__plus--git fa-stack fa-2x" title="Add Git Repo">
+            <i class="fas fa-circle-plus fa-stack-1x options__plus--plus"></i>
+            <i class="fab fa-github fa-stack-2x options__plus--gitstack"></i>
+          </span>
+          <label for="gitkey">Git API Key
+            <input type="password" class="options__inputs options__inputs--gitkey" id="gitkey" name="gitkey"
+              placeholder="ghp_************">
+          </label>
+        </h2>
+      </section>
+
+      <section class="options__toggle">
+        <h2 class="toggle__header">General Colors</h2>
+        <span class="toggle">
+          <input class="toggle__checkbox" type="checkbox" id="colors" name="colors" data-off="dark" data-on="bright">
+          <label class="toggle__label" for="colors"></label>
+          <span class="toggle__unchecked">Dark</span>
+          <span class="toggle__checked">Bright</span>
+        </span>
+        <div>
+          <h2 class="toggle__header">OpenWeatherMap or WeatherUnderground</h2>
+          <div class="toggle">
+            <input class="toggle__checkbox" type="checkbox" id="weather-type" name="weather-type" data-off="owm"
+              data-on="wu">
+            <label class="toggle__label" for="weather-type"></label>
+            <span class="toggle__unchecked">OWM</span>
+            <span class="toggle__checked">WU</span>
+          </div>
+
+          <div class="toggle">
+            <input class="toggle__checkbox" type="checkbox" id="weather-units" name="weather-units" data-off="imperial"
+              data-on="metric">
+            <label class="toggle__label" for="weather-units"></label>
+            <span class="toggle__unchecked">Imperial</span>
+            <span class="toggle__checked">Metric</span>
+          </div>
+        </div>
+        <h2 class="toggle__header">Key for specified weather API</h2>
+        <label class="options__header">API Key:
+          <input type="password" class="options__inputs options__inputs--weatherapi" name="weather-key" id="weather-key"
+            placeholder="123abc456def789ghi0">
+        </label>
+        <h2 class="toggle__header">Local Stations if using WeatherUnderground</h2>
+        <label class="options__header options__header--stations">Stations:
+          <input type="text" class="options__inputs options__inputs--weatherstations" name="stations" id="stations"
+            disabled placeholder="KIADESMO167, IGUJAN1">
+        </label>
+        <h2 class="toggle__header">ServerMon or
+          similar<a href="https://github.com/jnines/servermon" target="_blank"> <i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a></h2>
+        <label class="options__header">Server Monitor:
+          <input type="url" class="options__inputs options__inputs--servermonurl" name="server-mon" id="server-url"
+            placeholder="https://myserver.com/services.php">
+        </label>
+        <label class="options__header">Monitor Refresh Time in secs:
+          <input type="number" class="options__inputs options__inputs--servermonrefresh" name="refresh-time"
+            id="refresh-time" value="30" min="10" max="300">
+        </label>
+        <h2 class="options__title options__title--sm"><a href="https://fontawesome.com/search?o=r&m=free"
+            target="_blank">Font
+            Awesome Icons <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </h2>
+      </section>
+
+      <span class="options__close btn btn--absolute" title="Close"><i class="fas fa-rectangle-xmark"></i></span>
+      <div class="options__group">
+        <a title="Export Settings" class="options__export btn"><i class="fas fa-file-arrow-down"></i></a>
+        <label title="Import Settings" class="options__import btn"><input type="file" id="import-file" accept=".json"
+            hidden><i class="fas fa-file-arrow-up"></i></label>
+        <span class="options__save btn" title="Save Settings">
+          <i class="fas fa-floppy-disk"></i>
+        </span>
       </div>
     </div>
-    <div id="gRepos" class="gRepos"></div>
-    <div class="spacer"></div>
-    <div class="monitorr" id="monitorr"></div>
-    <footer></footer>
-    <script src="index.js" type="module"></script>
-  </body>
-</html>
+    <div class="overlay hidden"></div>
+  </main>
+</body>

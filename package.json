@@ -1,0 +1,33 @@
+{
+  "name": "mytab",
+  "version": "1.0.38",
+  "description": "Home and New tab extension",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "style": "stylelint '**/*.scss'",
+    "style-fix": "stylelint --fix '**/*.scss'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnines/MyTab.git"
+  },
+  "author": "Jason Mullenberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jnines/MyTab/issues"
+  },
+  "homepage": "https://github.com/jnines/MyTab",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

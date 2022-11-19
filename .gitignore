@@ -1,2 +1,7 @@
 env.js
 MyTab.zip
+node_modules
+extra.js
+*.map
+source.zip
+Archive.zip
