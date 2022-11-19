@@ -1,6 +1,6 @@
 ## MyTab
 
-I wrote this as an Homepage/New Tab extension/addon for Firefox (works for Chrome as well). As such I don't publish the extensions publicly, it's specific to what I wanted. It's also an exercise as I'm trying to learn HTML/CSS/JS/TS/React/insert flavor of the month framework.
+I wrote this as a Homepage/New Tab extension/addon for Firefox (works for Chrome as well). As such I don't publish the extensions publicly, it's specific to what I wanted. It's also an exercise as I'm trying to learn HTML/CSS/JS/TS/React/insert flavor of the month framework.
 
 
 
@@ -20,7 +20,7 @@ All are optional
 
 This can be published as a private extension/addon for either Firefox or Chrome (requiring replacing manifest.json with the one in the chromium folder), or "side-loaded" on Chrome. It can also be ran as a regular web-page. I made this an extension instead of a regular page for the purely convenient bit about my cursor starting in an empty URL bar.
 
-The only files required are index.html, the resources and app directories, and manifest.json if used as an extension.
+**The only files required are index.html, the resources and app directories, and manifest.json if used as an extension.**
 
 #### Storage
 
