@@ -20,6 +20,8 @@ All are optional
 
 This can be published as a private extension/addon for either Firefox or Chrome (requiring replacing manifest.json with the one in the chromium folder), or "side-loaded" on Chrome. It can also be ran as a regular web-page. I made this an extension instead of a regular page for the purely convenient bit about my cursor starting in an empty URL bar.
 
+The only files required are index.html, the resources and app directories, and manifest.json if used as an extension.
+
 #### Storage
 
 If used as an extension/addon it will use Firefox or Chrome sync storage respectively. If you choose not to use sync functionality, it will still use sync storage purely as extension storage. If run as a webpage it will use localstorage.
