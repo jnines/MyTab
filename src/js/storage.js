@@ -45,6 +45,7 @@ export const exportJson = (data, linkEl) => {
  * Allows for importing saved Options json
  **/
 export const importJson = function () {
+  const importInput = document.querySelector('#import-file');
   const reader = new FileReader();
   reader.readAsText(this.files[0]);
   reader.onload = () => renderOptions(JSON.parse(reader.result));

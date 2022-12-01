@@ -45,20 +45,25 @@
     font-size: 2.5rem;
     margin: 0.5rem 0;
 
-    &:hover .tooltip--git {
+    &:hover > .tooltip--git {
       visibility: visible;
       opacity: 1;
     }
 
     & > a {
       color: hslaf($color-orange, 0.5);
+
+      &:focus + .tooltip--git {
+        visibility: visible;
+        opacity: 1;
+      }
     }
 
     &--new {
       font-size: 2.5rem;
       margin: 0.5rem 0;
 
-      &:hover .tooltip--git {
+      &:hover > .tooltip--git {
         visibility: visible;
         opacity: 1;
       }
@@ -66,6 +71,11 @@
       & > a {
         color: hslaf($color-red, 0.8);
         position: relative;
+
+        &:focus + .tooltip--git {
+          visibility: visible;
+          opacity: 1;
+        }
       }
     }
   }

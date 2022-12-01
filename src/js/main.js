@@ -4,6 +4,7 @@ import {
   clearElements,
   escapeKeyOptions,
   fadeIn,
+  optionsBtnKey,
   optionsBtnOptions,
   renderBg,
   toggleOptions,
@@ -19,7 +20,6 @@ import renderWuWeather from './views/renderWuWeather.js';
 export function renderPage(state) {
   const container = document.querySelector('.container');
   const optionsBtn = document.querySelector('.options-btn');
-  const overlayEl = document.querySelector('.overlay');
   const bookmarksEl = document.querySelector('.bookmarks');
   const gitEl = document.querySelector('.git');
   const weatherEL = document.querySelector('.weather');
@@ -127,9 +127,8 @@ export function renderPage(state) {
 
   optionsBtn.removeEventListener('click', optionsBtnOptions);
   optionsBtn.addEventListener('click', optionsBtnOptions);
-
-  overlayEl.removeEventListener('click', toggleOptions);
-  overlayEl.addEventListener('click', toggleOptions);
+  optionsBtn.removeEventListener('keydown', optionsBtnKey);
+  optionsBtn.addEventListener('keydown', optionsBtnKey);
 
   document.removeEventListener('keydown', escapeKeyOptions);
   document.addEventListener('keydown', escapeKeyOptions);

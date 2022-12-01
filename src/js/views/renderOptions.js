@@ -4,9 +4,10 @@ import {
   dragRows,
   enableTextBox,
   inputDrag,
-  optionsBtnOptions,
+  optionsKey,
   scrollDown,
   toggleOptions,
+  toggleOptionsKey,
 } from '../helpers.js';
 import options from '../options.js';
 import { exportJson, importJson, storageGet } from '../storage.js';
@@ -56,6 +57,7 @@ const bookmarksOptions = (bName = '', bUrl = '', bIcon = '') => {
   iconInput.value = bIcon;
   const deleteBtn = document.createElement('span');
   deleteBtn.classList.add('btn', 'options__delete');
+  deleteBtn.tabIndex = 0;
   const delIcon = document.createElement('i');
   delIcon.classList.add('far', 'fa-circle-xmark');
 
@@ -96,6 +98,7 @@ const gitOptions = (gRepo = '', gBranch = '') => {
   branchInput.value = gBranch;
   const deleteBtn = document.createElement('span');
   deleteBtn.classList.add('btn', 'options__delete');
+  deleteBtn.tabIndex = 0;
   const delIcon = document.createElement('i');
   delIcon.classList.add('far', 'fa-circle-xmark');
   deleteBtn.append(delIcon);
@@ -109,32 +112,39 @@ const gitOptions = (gRepo = '', gBranch = '') => {
 };
 
 const renderEl = () => {
-  const optionsBtn = document.querySelector('.options-btn');
+  const addBookmarksEvent = (e) => {
+    bookmarksOptions();
+    scrollDown(optionsBookmarksEl);
+    const dragEls = document.querySelectorAll('.drag');
+    const dragBtns = document.querySelectorAll('.btn--drag');
+    dragRows(optionsBookmarksEl);
+    inputDrag(dragEls, dragBtns);
+  };
 
   const addBookmarksBtn = document.querySelector('.options__plus--bookmarks');
   if (!addBookmarksBtn.dataset.add) {
     addBookmarksBtn.dataset.add = true;
-    addBookmarksBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      bookmarksOptions();
-      scrollDown(optionsBookmarksEl);
-      const dragEls = document.querySelectorAll('.drag');
-      const dragBtns = document.querySelectorAll('.btn--drag');
-      dragRows(optionsBookmarksEl);
-      inputDrag(dragEls, dragBtns);
+    addBookmarksBtn.addEventListener('click', addBookmarksEvent);
+    addBookmarksBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') addBookmarksEvent();
     });
   }
+
+  const addGitEvent = () => {
+    gitOptions();
+    scrollDown(optionsGitEl);
+    const dragEls = document.querySelectorAll('.drag');
+    const dragBtns = document.querySelectorAll('.btn--drag');
+    dragRows(optionsGitEl);
+    inputDrag(dragEls, dragBtns);
+  };
+
   const addGitBtn = document.querySelector('.options__plus--git');
   if (!addGitBtn.dataset.add) {
     addGitBtn.dataset.add = true;
-    addGitBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      gitOptions();
-      scrollDown(optionsGitEl);
-      const dragEls = document.querySelectorAll('.drag');
-      const dragBtns = document.querySelectorAll('.btn--drag');
-      dragRows(optionsGitEl);
-      inputDrag(dragEls, dragBtns);
+    addGitBtn.addEventListener('click', addGitEvent);
+    addGitBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') addGitEvent();
     });
   }
   document.body.addEventListener('load', () =>
@@ -149,12 +159,13 @@ const renderEl = () => {
 
   saveBtn.removeEventListener('click', options);
   saveBtn.addEventListener('click', options);
+  saveBtn.removeEventListener('keydown', optionsKey);
+  saveBtn.addEventListener('keydown', optionsKey);
 
   closeOptionsBtn.removeEventListener('click', toggleOptions);
   closeOptionsBtn.addEventListener('click', toggleOptions);
-
-  optionsBtn.removeEventListener('click', optionsBtnOptions);
-  optionsBtn.addEventListener('click', optionsBtnOptions);
+  closeOptionsBtn.removeEventListener('keydown', toggleOptionsKey);
+  closeOptionsBtn.addEventListener('keydown', toggleOptionsKey);
 };
 
 export default async function (data) {

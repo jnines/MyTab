@@ -273,7 +273,8 @@
     font-size: 0.5rem;
     align-self: flex-start;
 
-    &:hover + .tooltip--options {
+    &:hover + .tooltip--options,
+    &:focus + .tooltip--options {
       visibility: visible;
       opacity: 1;
     }
@@ -283,4 +284,15 @@
 .fa-stack-1x {
   left: 3rem;
   bottom: -1.2rem;
+}
+
+#import-file {
+  position: absolute;
+  background-color: hslaf($color-grey-40, 0.1);
+  width: 2.5rem;
+  height: 5rem;
+
+  &::file-selector-button {
+    opacity: 0;
+  }
 }

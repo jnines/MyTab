@@ -59,7 +59,7 @@ export default async function (state) {
       const messageLi = document.createElement('li');
       messageLi.classList.add('.git__message');
       messageLi.textContent = `${commitMessage}`;
-      titleLi.append(gitTooltip, aHref);
+      titleLi.append(aHref, gitTooltip);
       repoUList.append(titleLi, dateLi, messageLi);
       uDiv.append(repoUList);
       githubFragment.append(uDiv);

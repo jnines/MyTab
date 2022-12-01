@@ -1,4 +1,5 @@
 import { gitDate } from './config.js';
+import options from './options.js';
 
 /**
  * Grabs user locale for formatting purposes
@@ -95,12 +96,33 @@ const toggleEl = (elArr, elClass) => {
 };
 
 /**
+ * Sets the Open/showModal to make the background inert for accessability/tab-ability
+ **/
+export const toggleModal = () => {
+  const modalEl = document.querySelector('.modal');
+  modalEl.open ? modalEl.close() : modalEl.showModal();
+};
+
+/**
  * Toggles Options and overlay modal visibility
  **/
-export const toggleOptions = () => {
+export const toggleOptions = (e) => {
   const modalEl = document.querySelector('.modal');
   const overlayEl = document.querySelector('.overlay');
   toggleEl([modalEl, overlayEl], 'hidden');
+  toggleModal();
+};
+
+export const toggleOptionsKey = (e) => {
+  if ((e && e.key === 'Enter') || (e && e.key === ' ')) {
+    toggleOptions();
+  }
+};
+
+export const optionsKey = (e) => {
+  if ((e && e.key === 'Enter') || (e && e.key === ' ')) {
+    options();
+  }
 };
 
 /**
@@ -210,17 +232,24 @@ export const clearForms = (els) => {
 };
 
 /**
- * Options button listener callback that toggles the options element and scrolls to the top
+ * Options button listeners callback that toggles the options element and scrolls to the top
  **/
 export const optionsBtnOptions = () => {
   toggleOptions();
   scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 };
 
+export const optionsBtnKey = (e) => {
+  if ((e && e.key === 'Enter') || (e && e.key === ' ')) {
+    optionsBtnOptions();
+  }
+};
+
 /**
  * Escape key listener callback for closing Options modal
  **/
 export const escapeKeyOptions = (e) => {
+  const modalEl = document.querySelector('.modal');
   if (e.key === 'Escape' && !modalEl.classList.contains('hidden'))
     toggleOptions();
 };
