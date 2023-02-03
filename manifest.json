@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "MyTab",
   "description": "Private homepage and new tab.",
   "author": "Jason Mullenberg",
