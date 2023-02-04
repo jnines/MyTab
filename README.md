@@ -2,6 +2,8 @@
 
 I wrote this as a Homepage/New Tab extension/addon for Firefox (works for Chrome as well). As such I don't publish the extensions publicly, it's specific to what I wanted. It's also an exercise as I'm trying to learn HTML/CSS/JS/TS/React/insert flavor of the month framework.
 
+https://user-images.githubusercontent.com/51514842/216735597-25ae7644-c16b-4515-8d8d-08aadd55a241.mp4
+
 ## Features
 
 All are optional
