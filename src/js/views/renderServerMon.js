@@ -30,7 +30,7 @@ export default async function (url, colors) {
       img.alt = arr?.name;
       const aHref = document.createElement('a');
       aHref.classList.add('server__link');
-      aHref.href = `${arr?.address}:${arr?.port}${arr?.url}`;
+      aHref.href = arr?.url;
       aHref.target = '_blank';
       aHref.ariaLabel = arr?.name;
       const smContainer = document.createElement('div');
