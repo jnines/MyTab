@@ -29,6 +29,7 @@ export default async function (obj) {
       aHref.classList.add('weather__link');
       aHref.href = `https://www.wunderground.com/forecast/${referrer}`;
       aHref.ariaLabel = 'Weather Underground Forecast';
+      aHref.title = 'Weather Underground Forecast';
       /* Create Current Weather */
       const weatherCur = document.createElement('div');
       weatherCur.classList.add('weather-cur', 'flex');

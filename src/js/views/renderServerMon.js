@@ -33,6 +33,7 @@ export default async function (url, colors) {
       aHref.href = arr?.url;
       aHref.target = '_blank';
       aHref.ariaLabel = arr?.name;
+      aHref.title = arr?.name;
       const smContainer = document.createElement('div');
       smContainer.classList.add('server__container');
 

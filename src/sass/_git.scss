@@ -51,7 +51,7 @@
     }
 
     & > a {
-      color: hslaf($color-orange, 0.5);
+      color: hslaf($color-orange, 0.8);
 
       &:focus + .tooltip--git {
         visibility: visible;

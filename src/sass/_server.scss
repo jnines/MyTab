@@ -71,7 +71,7 @@
     text-shadow: 1px 1px hslaf($color-black, 0.9);
 
     &--on {
-      background-color: hslaf($color-green, 0.6);
+      background-color: hslaf($color-green, 0.4);
       box-shadow: 0 0.2rem 1rem hslaf($color-green, 0.7);
 
       &:hover,

@@ -5,7 +5,7 @@
   "description": "Private homepage and new tab.",
   "author": "Jason Mullenberg",
   "homepage_url": "https://github.com/jnines/MyTab",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "permissions": ["geolocation", "storage"],
 
   "chrome_url_overrides": {
