@@ -63,14 +63,18 @@
       font-size: 2.5rem;
       margin: 0.5rem 0;
 
+      &::after {
+        content: '\1F4A5';
+      }
+
       &:hover > .tooltip--git {
         visibility: visible;
         opacity: 1;
       }
 
       & > a {
-        color: hslaf($color-white, 0.8);
-        -webkit-text-stroke: 3px hslaf($color-red, 0.5);
+        color: hslaf($color-orange, 0.8);
+        -webkit-text-stroke: 1px hslaf($color-red, 0.4);
         position: relative;
 
         &:focus + .tooltip--git {
