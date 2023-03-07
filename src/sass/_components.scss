@@ -145,6 +145,7 @@
       display: block;
       padding: 3rem 0;
       user-select: none;
+      -webkit-user-select: none;
       pointer-events: none;
 
       @media only screen and (max-width: 62.5em) {

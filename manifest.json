@@ -4,7 +4,7 @@
   "description": "Private homepage and new tab.",
   "author": "Jason Mullenberg",
   "homepage_url": "https://github.com/jnines/MyTab",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "permissions": ["storage", "geolocation"],
   "browser_specific_settings": {
     "gecko": {

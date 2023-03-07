@@ -69,7 +69,8 @@
       }
 
       & > a {
-        color: hslaf($color-red, 0.8);
+        color: hslaf($color-white, 0.8);
+        -webkit-text-stroke: 3px hslaf($color-red, 0.5);
         position: relative;
 
         &:focus + .tooltip--git {
