@@ -38,6 +38,15 @@
       transition: all 0.2s ease-in;
     }
 
+    &--error {
+      border: 2px inset hslaf($color-red, 0.9);
+
+      &:hover,
+      &:focus {
+        border: 2px inset hslaf($color-red, 0.9);
+      }
+    }
+
     & > .fas,
     & > .fab,
     & > .far {

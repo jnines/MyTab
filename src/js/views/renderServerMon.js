@@ -33,9 +33,13 @@ export default async function (url, colors) {
       aHref.href = arr?.url;
       aHref.target = '_blank';
       aHref.ariaLabel = arr?.name;
-      aHref.title = arr?.name;
+      aHref.title = arr?.error ?? arr?.name;
       const smContainer = document.createElement('div');
-      smContainer.classList.add('server__container');
+      smContainer.classList.add(
+        'server__container',
+        `${arr?.error && 'server__container--error'}`
+      );
+      if (arr?.error) console.error(arr);
 
       smContainer.append(aHref, img, title, status);
       serverMonitorFragment.append(smContainer);
