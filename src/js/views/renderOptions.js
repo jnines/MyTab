@@ -71,7 +71,7 @@ const bookmarksOptions = (bName = '', bUrl = '', bIcon = '') => {
   optionsBookmarksEl.append(optionsBookmarkFragment);
 };
 
-const gitOptions = (gRepo = '', gBranch = '') => {
+const gitOptions = (gRepo = '', gBranch = 'master') => {
   const form = document.createElement('form');
   form.classList.add('options__forms--row', 'drag');
   const grabBtn = document.createElement('span');
