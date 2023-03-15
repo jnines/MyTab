@@ -24,10 +24,10 @@ export function renderPage(state) {
   const gitEl = document.querySelector('.git');
   const weatherEL = document.querySelector('.weather');
   const serverEl = document.querySelector('.server');
-  const bookmarkLength = state?.bookmarks.length;
-  const gitLength = state?.git.gitRepos.length;
-  const serverURL = state?.serverMon.url;
-  const weatherKey = state?.weather.weatherKey;
+  const bookmarkLength = state?.bookmarks?.length;
+  const gitLength = state?.git?.gitRepos?.length;
+  const serverURL = state?.serverMon?.url;
+  const weatherKey = state?.weather?.weatherKey;
   clearElements();
   const elValues = [bookmarkLength, gitLength, serverURL, weatherKey].filter(
     Boolean

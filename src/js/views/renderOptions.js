@@ -189,7 +189,7 @@ export default async function (data) {
     bookmarksOptions(bookmark.name, bookmark.url, bookmark.icon)
   );
   bookmarksOptions();
-  state?.git.gitRepos.forEach((repo) => gitOptions(repo.repo, repo.branch));
+  state?.git?.gitRepos?.forEach((repo) => gitOptions(repo.repo, repo.branch));
   gitOptions();
   colors.checked = state?.colors === 'bright' ?? false;
   weatherType.checked = state?.weather.type === 'wu' ?? false;
