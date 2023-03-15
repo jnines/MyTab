@@ -1,4 +1,10 @@
-import { getForms, getToggles, stripSpaces, toggleOptions } from './helpers.js';
+import {
+  getForms,
+  getToggles,
+  stripSpaces,
+  toggleOptions,
+  urlToRepo,
+} from './helpers.js';
 import { renderPage } from './main.js';
 import { storageSet } from './storage.js';
 
@@ -16,8 +22,10 @@ export default async function () {
       bm.name !== undefined && bm.url !== undefined && bm.icon !== undefined
   );
 
-  const gitRepos = stripSpaces(
-    gitReposForm.filter((r) => r.repo !== undefined && r.branch !== undefined)
+  const gitRepos = urlToRepo(
+    stripSpaces(
+      gitReposForm.filter((r) => r.repo !== undefined && r.branch !== undefined)
+    )
   );
 
   const [type, units] = getToggles('#weather-type', '#weather-units').values();

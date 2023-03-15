@@ -317,3 +317,18 @@ export const innerQuotes = (str) => {
     return str.split('"')[1];
   }
 };
+
+/**
+ * Convert any object repo properties from URl into useable repo property
+ * @param arr array of objects to be potentially converted
+ **/
+export const urlToRepo = (arr) => {
+  const repo = arr.map((obj) => {
+    const urlParts = obj.repo.split('/');
+    return {
+      ...obj,
+      repo: `${urlParts[urlParts.length - 2]}/${urlParts[urlParts.length - 1]}`,
+    };
+  });
+  return repo;
+};
