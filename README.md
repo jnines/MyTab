@@ -11,7 +11,7 @@ All are optional
 - Bookmarks with user specified FontAwesome icon
 - Github repository information
 - Current and forecast weather, through either OpenWeatherMap or WeatherUnderground
-- A server/service [monitor](https://github.com/jnines/servermon) (requires separate webserver)
+- A server/service like [servermon](https://github.com/jnines/servermon) or [node-servermon](https://github.com/jnines/node-servermon)
 
 ### How it's run
 
