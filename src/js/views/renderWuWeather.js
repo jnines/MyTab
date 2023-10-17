@@ -49,14 +49,16 @@ export default async function (obj) {
         current.observations[0].uk_hybrid?.heatIndex ||
         current.observations[0].imperial?.windChill ||
         current.observations[0].metric?.windChill ||
-        current.observations[0].uk_hybrid?.windChill
+        current.observations[0].uk_hybrid?.windChill ||
+        'Current weather stats not available'
       }°`;
       const currentTempDiv = document.createElement('div');
       currentTempDiv.classList.add('weather-cur__temp');
       currentTempDiv.textContent = `${
         current.observations[0].imperial?.temp ||
         current.observations[0].metric?.temp ||
-        current.observations[0].uk_hybrid.temp
+        current.observations[0].uk_hybrid?.temp ||
+        'X'
       }°`;
       weatherCur.append(curTooltip, currentImg, currentTempDiv);
       weatherCurrentFragment.append(weatherCur);
